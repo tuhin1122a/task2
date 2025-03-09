@@ -1,101 +1,140 @@
-import Image from "next/image";
-
+import { bestSellingCourses } from "@/data";
+import {
+  BarChart2,
+  Bell,
+  BookOpen,
+  Camera,
+  GraduationCap,
+  Heart,
+  Monitor,
+  Search,
+  ShoppingCart,
+  Users,
+} from "lucide-react";
+import CategoryCard from "./components/CategoryCard";
+import CourseCard from "./components/CourseCard";
+import FeaturedCourses from "./components/FeaturedCourses";
+import Hero from "./components/Hero";
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <GraduationCap className="h-8 w-8 text-orange-500" />
+              <span className="ml-2 text-xl font-bold">E-tutor</span>
+              <div className="ml-10">
+                <button className="text-gray-600 hover:text-gray-900 px-3 py-2">
+                  Browse
+                </button>
+              </div>
+              <div className="ml-4 flex-1">
+                <div className="relative">
+                  <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="What do you want to learn..."
+                    className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <Bell className="h-6 w-6 text-gray-600 cursor-pointer" />
+              <Heart className="h-6 w-6 text-gray-600 cursor-pointer" />
+              <ShoppingCart className="h-6 w-6 text-gray-600 cursor-pointer" />
+              <button className="text-orange-500 hover:text-orange-600 px-4 py-2">
+                Create Account
+              </button>
+              <button className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">
+                Sign in
+              </button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </nav>
+
+      {/* Hero Section */}
+      <Hero />
+      {/* Categories Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          Browse top category
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <CategoryCard
+            icon={<BookOpen className="h-6 w-6" />}
+            title="Label"
+            courses="63,476 Courses"
+            bgColor="bg-indigo-50"
+            textColor="text-indigo-600"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <CategoryCard
+            icon={<BarChart2 className="h-6 w-6" />}
+            title="Business"
+            courses="52,822 Courses"
+            bgColor="bg-green-50"
+            textColor="text-green-600"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <CategoryCard
+            icon={<Monitor className="h-6 w-6" />}
+            title="IT & Software"
+            courses="22,649 Courses"
+            bgColor="bg-red-50"
+            textColor="text-red-600"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <CategoryCard
+            icon={<Monitor className="h-6 w-6" />}
+            title="IT & Software"
+            courses="22,649 Courses"
+            bgColor="bg-red-50"
+            textColor="text-red-600"
+          />
+          <CategoryCard
+            icon={<Users className="h-6 w-6" />}
+            title="Personal Development"
+            courses="20,126 Courses"
+            bgColor="bg-orange-50"
+            textColor="text-orange-600"
+          />
+          <CategoryCard
+            icon={<BookOpen className="h-6 w-6" />}
+            title="Office Productivity"
+            courses="13,932 Courses"
+            bgColor="bg-purple-50"
+            textColor="text-purple-600"
+          />
+          <CategoryCard
+            icon={<BarChart2 className="h-6 w-6" />}
+            title="Marketing"
+            courses="12,068 Courses"
+            bgColor="bg-blue-50"
+            textColor="text-blue-600"
+          />
+          <CategoryCard
+            icon={<Camera className="h-6 w-6" />}
+            title="Photography & Video"
+            courses="6,196 Courses"
+            bgColor="bg-yellow-50"
+            textColor="text-yellow-600"
+          />
+        </div>
+      </div>
+
+      {/* Best Selling Courses Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-gray-50">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          Best selling courses
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {bestSellingCourses.map((course, index) => (
+            <CourseCard key={index} {...course} />
+          ))}
+        </div>
+      </div>
+      <FeaturedCourses />
     </div>
   );
 }
