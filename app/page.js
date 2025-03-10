@@ -4,6 +4,7 @@ import CourseCard from "./components/CourseCard";
 import FeaturedCourses from "./components/FeaturedCourses";
 import Hero from "./components/Hero";
 import Navigation from "./components/Navigation";
+import RecentlyAddedCourses from "./components/RecentCourse";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
@@ -33,6 +34,7 @@ export default function Home() {
       </div>
       {/* FeaturedCourses section */}
       <FeaturedCourses />
+      <RecentlyAddedCourses />
     </div>
   );
 }

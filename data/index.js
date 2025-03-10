@@ -140,3 +140,35 @@ export const categories = [
     textColor: "text-yellow-600",
   },
 ];
+export const courses = [
+  {
+    id: 1,
+    category: "DESIGN",
+    title: "The Python Mega Course: Build 10 Real World Applications",
+    price: "$57",
+    rating: 5.0,
+    students: "265.7K",
+    image:
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    id: 2,
+    category: "IT & SOFTWARE",
+    title: "Facebook Ads & Facebook Marketing MASTERY 2021 Course",
+    price: "$57",
+    rating: 5.0,
+    students: "265.7K",
+    image:
+      "https://images.unsplash.com/photo-1503428593586-e225b39bddfe?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    id: 3,
+    category: "DEVELOPMENTS",
+    title: "2021 Complete Python Bootcamp From Zero to Hero in Python",
+    price: "$57",
+    rating: 5.0,
+    students: "265.7K",
+    image:
+      "https://plus.unsplash.com/premium_photo-1682284352941-58dceb6cd601?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];
